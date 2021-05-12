@@ -17,7 +17,7 @@ var ROLE = {
 							if(companyResponse.data.owner.id == response.data.id) {
 								callback("owner");
 							} else {
-								callback(response.role.name);
+								callback(response.data.role.name);
 							}
 						},
 						error : function(companyResponse) {
