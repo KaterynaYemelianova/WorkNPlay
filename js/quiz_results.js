@@ -29,7 +29,7 @@ let quiz_id = url.searchParams.get("id");
 let request = {
 	type :  "POST",
 	contentType : "application/json",
-	url : "http://worknplay.somee.com/api/Quiz/GetResults",
+	url : "https://worknplay2.azurewebsites.net/api/Quiz/GetResults",
 	data : JSON.stringify({ data : { id : quiz_id }}),
 	dataType : "json",
 	success : function(response) {

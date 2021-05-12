@@ -28,7 +28,7 @@ new Vue({ el : "#user-info", data : MODEL });
 let request = {
 	type :  "POST",
 	contentType : "application/json",
-	url : "http://worknplay.somee.com/api/Account/GetProfile",
+	url : "https://worknplay2.azurewebsites.net/api/Account/GetProfile",
 	data : JSON.stringify({"data" : {}}),
 	dataType : "json",
 	success : function(response) {
@@ -45,7 +45,7 @@ $.ajax(request);
 let eventRequest = {
 	type :  "POST",
 	contentType : "application/json",
-	url : "http://worknplay.somee.com/api/EnterLeaveEvent/GetMy",
+	url : "https://worknplay2.azurewebsites.net/api/EnterLeaveEvent/GetMy",
 	data : JSON.stringify({"data" : {}}),
 	dataType : "json",
 	success : function(response) {
@@ -72,7 +72,7 @@ function saveUserProfile(e) {
 	let request = {
 		type :  "POST",
 		contentType : "application/json",
-		url : "http://worknplay.somee.com/api/Account/UpdateProfile",
+		url : "https://worknplay2.azurewebsites.net/api/Account/UpdateProfile",
 		data : JSON.stringify({"data" : data}),
 		dataType : "json",
 		success : function(response) {

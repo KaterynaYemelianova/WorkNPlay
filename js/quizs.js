@@ -17,7 +17,7 @@ Vue.component('quiz', {
 			let request = {
 				type :  "POST",
 				contentType : "application/json",
-				url : "http://worknplay.somee.com/api/Quiz/Start",
+				url : "https://worknplay2.azurewebsites.net/api/Quiz/Start",
 				data : JSON.stringify(dto),
 				dataType : "json",
 				success : function(response) {
@@ -42,7 +42,7 @@ Vue.component('quiz', {
 			let request = {
 				type :  "POST",
 				contentType : "application/json",
-				url : "http://worknplay.somee.com/api/Quiz/Stop",
+				url : "https://worknplay2.azurewebsites.net/api/Quiz/Stop",
 				data : JSON.stringify(dto),
 				dataType : "json",
 				success : function(response) {
@@ -119,7 +119,7 @@ new Vue({
 let request = {
 	type :  "POST",
 	contentType : "application/json",
-	url : "http://worknplay.somee.com/api/Quiz/GetAllQuizes",
+	url : "https://worknplay2.azurewebsites.net/api/Quiz/GetAllQuizes",
 	data : JSON.stringify({}),
 	dataType : "json",
 	success : function(response) {

@@ -3,7 +3,7 @@ var ROLE = {
 		let request = {
 			type : "POST",
 			contentType : "application/json",
-			url : "http://worknplay.somee.com/api/Account/GetProfile",
+			url : "https://worknplay2.azurewebsites.net/api/Account/GetProfile",
 			data : JSON.stringify({}),
 			dataType : "json",
 			success : function(response) {
@@ -12,7 +12,7 @@ var ROLE = {
 				else {
 					let companyRequest = {
 						type : "GET",
-						url : "http://worknplay.somee.com/api/Company/Get?id=" + response.data.company_id,
+						url : "https://worknplay2.azurewebsites.net/api/Company/Get?id=" + response.data.company_id,
 						success : function(companyResponse) {
 							if(companyResponse.data.owner.id == response.data.id) {
 								callback("owner");

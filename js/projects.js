@@ -16,7 +16,7 @@ Vue.component('project', {
 			let request = {
 				type :  "POST",
 				contentType : "application/json",
-				url : "http://worknplay.somee.com/api/Project/Remove",
+				url : "https://worknplay2.azurewebsites.net/api/Project/Remove",
 				data : JSON.stringify(dto),
 				dataType : "json",
 				success : function(response) {
@@ -43,7 +43,7 @@ Vue.component('project', {
 			let request = {
 				type :  "POST",
 				contentType : "application/json",
-				url : "http://worknplay.somee.com/api/Project/Bind",
+				url : "https://worknplay2.azurewebsites.net/api/Project/Bind",
 				data : JSON.stringify(dto),
 				dataType : "json",
 				success : function(response) {
@@ -53,7 +53,7 @@ Vue.component('project', {
 					let getAuthLinkRequest = {
 						type : "POST",
 						contentType : "application/json",
-						url : "http://worknplay.somee.com/api/ProjectManagementSystem/GetAuthLink",
+						url : "https://worknplay2.azurewebsites.net/api/ProjectManagementSystem/GetAuthLink",
 						data : JSON.stringify({ data : { id : binded.id	 }}),
 						dataType : "json",
 						success : function(authLinkResponse) {
@@ -80,7 +80,7 @@ Vue.component('project', {
 			let request = {
 				type :  "POST",
 				contentType : "application/json",
-				url : "http://worknplay.somee.com/api/Task/Update",
+				url : "https://worknplay2.azurewebsites.net/api/Task/Update",
 				data : JSON.stringify(dto),
 				dataType : "json",
 				success : function(response) {
@@ -143,7 +143,7 @@ new Vue({
 let request = {
 	type :  "POST",
 	contentType : "application/json",
-	url : "http://worknplay.somee.com/api/Project/GetAll",
+	url : "https://worknplay2.azurewebsites.net/api/Project/GetAll",
 	data : JSON.stringify({ data : {}}),
 	dataType : "json",
 	success : function(response) {

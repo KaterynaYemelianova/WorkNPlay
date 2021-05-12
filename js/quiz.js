@@ -25,7 +25,7 @@ new Vue({
 let request = {
 	type :  "POST",
 	contentType : "application/json",
-	url : "http://worknplay.somee.com/api/Quiz/GetAllQuizes",
+	url : "https://worknplay2.azurewebsites.net/api/Quiz/GetAllQuizes",
 	data : JSON.stringify({ data : {}}),
 	dataType : "json",
 	success : function(response) {
@@ -71,7 +71,7 @@ function answerQuiz() {
 	let request = {
 		type :  "POST",
 		contentType : "application/json",
-		url : "http://worknplay.somee.com/api/Quiz/Answer",
+		url : "https://worknplay2.azurewebsites.net/api/Quiz/Answer",
 		data : JSON.stringify({ data : answer }),
 		dataType : "json",
 		success : function(response) {

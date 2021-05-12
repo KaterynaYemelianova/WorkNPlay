@@ -30,7 +30,7 @@ function register() {
 	let request = {
 		type : "POST",
 		contentType : "application/json",
-		url : "http://worknplay.somee.com/api/Quiz/Create",
+		url : "https://worknplay2.azurewebsites.net/api/Quiz/Create",
 		data : JSON.stringify(dto),
 		dataType : "json",
 		success : function(reg_response) {

@@ -16,7 +16,7 @@ Vue.component('present', {
 			let request = {
 				type :  "POST",
 				contentType : "application/json",
-				url : "http://worknplay.somee.com/api/Present/Buy",
+				url : "https://worknplay2.azurewebsites.net/api/Present/Buy",
 				data : JSON.stringify(dto),
 				dataType : "json",
 				success : function(response) {
@@ -51,7 +51,7 @@ new Vue({
 let request = {
 	type :  "POST",
 	contentType : "application/json",
-	url : "http://worknplay.somee.com/api/Present/GetAll",
+	url : "https://worknplay2.azurewebsites.net/api/Present/GetAll",
 	data : JSON.stringify({ data : {} }),
 	dataType : "json",
 	success : function(response) {

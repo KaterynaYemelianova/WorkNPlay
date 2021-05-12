@@ -9,7 +9,7 @@ function register(ev) {
 	let request = {
 		type : "POST",
 		contentType : "application/json",
-		url : "http://worknplay.somee.com/api/Present/Add",
+		url : "https://worknplay2.azurewebsites.net/api/Present/Add",
 		data : JSON.stringify(dto),
 		dataType : "json",
 		success : function(reg_response) {

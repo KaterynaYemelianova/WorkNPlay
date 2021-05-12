@@ -7,14 +7,14 @@ function register(ev) {
 	let request = {
 		type : "POST",
 		contentType : "application/json",
-		url : "http://worknplay.somee.com/api/Project/Add",
+		url : "https://worknplay2.azurewebsites.net/api/Project/Add",
 		data : JSON.stringify(dto),
 		dataType : "json",
 		success : function(reg_response) {
 			let getAuthLinkRequest = {
 				type : "POST",
 				contentType : "application/json",
-				url : "http://worknplay.somee.com/api/ProjectManagementSystem/GetAuthLink",
+				url : "https://worknplay2.azurewebsites.net/api/ProjectManagementSystem/GetAuthLink",
 				data : JSON.stringify({ data : { id : reg_response.data.id }}),
 				dataType : "json",
 				success : function(authLinkResponse) {

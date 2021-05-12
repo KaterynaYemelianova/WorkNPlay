@@ -15,7 +15,7 @@ function login(ev) {
 	$.ajax({
 		type : "POST",
 		contentType : "application/json",
-		url : "http://worknplay.somee.com/api/Auth/LogIn",
+		url : "https://worknplay2.azurewebsites.net/api/Auth/LogIn",
 		data : JSON.stringify(dto),
 		dataType : "json",
 		success : function(log_response) {

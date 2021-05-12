@@ -11,13 +11,13 @@ var MODEL = {
 let request = {
 	type : "POST",
 	contentType : "application/json",
-	url : "http://worknplay.somee.com/api/Account/GetProfile",
+	url : "https://worknplay2.azurewebsites.net/api/Account/GetProfile",
 	data : JSON.stringify({ "data" : {}}),
 	dataType : "json",
 	success : function(response) {
 		let companyRequest = {
 			type : "GET",
-			url : "http://worknplay.somee.com/api/Company/Get?id=" + response.data.company_id,
+			url : "https://worknplay2.azurewebsites.net/api/Company/Get?id=" + response.data.company_id,
 			success : function(companyResponse) {
 				MODEL.company = companyResponse.data;
 			},
@@ -30,7 +30,7 @@ let request = {
 		let workersRequest = {
 			type : "POST",
 			contentType : "application/json",
-			url : "http://worknplay.somee.com/api/Company/GetWorkers",
+			url : "https://worknplay2.azurewebsites.net/api/Company/GetWorkers",
 			data : JSON.stringify({"data" : { "id" : response.data.company_id }}),
 			dataType : "json",
 			success : function(workersResponse) {
@@ -53,7 +53,7 @@ $.ajax(request);
 
 let loginsRequest = {
 	type : "GET",
-	url : "http://worknplay.somee.com/api/Account/GetAllLogins",
+	url : "https://worknplay2.azurewebsites.net/api/Account/GetAllLogins",
 	success : function(loginsResponse) {
 		MODEL.logins = loginsResponse.data;
 	},
@@ -77,7 +77,7 @@ Vue.component('worker', {
 			let request = {
 				type :  "POST",
 				contentType : "application/json",
-				url : "http://worknplay.somee.com/api/Worker/Fire",
+				url : "https://worknplay2.azurewebsites.net/api/Worker/Fire",
 				data : JSON.stringify(dto),
 				dataType : "json",
 				success : function(response) {
@@ -117,7 +117,7 @@ function saveCompanyProfile(e) {
 	let request = {
 		type :  "POST",
 		contentType : "application/json",
-		url : "http://worknplay.somee.com/api/Company/Update",
+		url : "https://worknplay2.azurewebsites.net/api/Company/Update",
 		data : JSON.stringify({data : dto}),
 		dataType : "json",
 		success : function(response) {
@@ -143,7 +143,7 @@ function hireWorker(e) {
 	let request = {
 		type :  "POST",
 		contentType : "application/json",
-		url : "http://worknplay.somee.com/api/Worker/Hire",
+		url : "https://worknplay2.azurewebsites.net/api/Worker/Hire",
 		data : JSON.stringify({"data" : data}),
 		dataType : "json",
 		success : function(response) {

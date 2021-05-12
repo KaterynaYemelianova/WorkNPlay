@@ -7,7 +7,7 @@ function register(ev) {
 	
 	$.ajax({
 		type : "GET",
-		url : "http://worknplay.somee.com/api/Key/GetPublicAsymmetricKey",
+		url : "https://worknplay2.azurewebsites.net/api/Key/GetPublicAsymmetricKey",
 		success : response => {
 			let publicKey = new RSAPublicKey(
 				Base64.decode(response.data.modulus), 
@@ -33,7 +33,7 @@ function register(ev) {
 			$.ajax({
 				type : "POST",
 				contentType : "application/json",
-				url : "http://worknplay.somee.com/api/Auth/SignUp",
+				url : "https://worknplay2.azurewebsites.net/api/Auth/SignUp",
 				data : JSON.stringify(dto),
 				dataType : "json",
 				success : function(reg_response) {

@@ -31,7 +31,7 @@ new Vue({
 let request = {
 	type :  "POST",
 	contentType : "application/json",
-	url : "http://worknplay.somee.com/api/Project/GetMy",
+	url : "https://worknplay2.azurewebsites.net/api/Project/GetMy",
 	data : JSON.stringify({}),
 	dataType : "json",
 	success : function(response) {
