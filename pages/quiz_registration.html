@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Quiz Registration</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="../css/vue.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/main_page.css">
+</head>
+<body>
+	
+	<nav id="header" class="menu one">
+		<custom-header></custom-header>
+	</nav>
+	
+	<div class="comp_reg">
+		<div class="wrap-login100 reg_form">
+
+			<div id="registration_form" class="login100-form validate-form reg_form_form">
+				<span class="login100-form-title">
+					Quiz Registration
+				</span>
+
+				<div class="wrap-input100 validate-input">
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="text" name="name" id="name" placeholder="Name">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input">
+					<textarea class="input100" placeholder="Description" name="description" id="description" cols="40" rows="5" style="padding:12px 30px; min-height:15vh; min-width:18.5vw; max-width:18.5vw"></textarea>
+				</div>
+				
+				<div class="wrap-input100 validate-input">
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="number" id="questionCount" name="questionCount" placeholder="Question count">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="container-login100-form-btn">
+					<button onclick="create_quiz()" class="login100-form-btn" style="border-radius:20px;">
+						Create a quiz
+					</button>
+				</div>
+				
+				<label></label>
+				<div id="questions"></div>
+			</div>
+		</div>
+	</div>
+	
+	<script src="../js/libs/jquery.js"></script>
+	<script src="../js/libs/vue.js"></script>
+	<script src="../js/vue_filters.js"></script>
+	<script src="../js/libs/sha256.js"></script>
+	<script src="../js/cookie.js"></script>
+	<script src="../js/localize.js"></script>
+	<script src="../js/session.js"></script>
+	<script src="../js/role.js"></script>
+	<script src="../js/header.js"></script>
+	<script src="../js/quiz_registration.js"></script>
+	
+	<script src="../js/main.js">
+	
+		$(".five li ul").hide();
+		$(".five li:has('.submenu')").hover(
+		function(){
+			$(".five li ul").stop().fadeToggle(300);}
+		);
+	
+	</script>
+
+	<script>
+		function create_quiz() {
+			var question_count = document.getElementById("questionCount").value;
+			var form_elem = document.getElementById("questions");
+			for (let i = 1; i <= question_count; i++) {
+				form_elem.innerHTML += "<div style=\"padding-top: 5vh;\">Question " + i + "</div><div class=\"wrap-input100 validate-input\"><textarea class=\"input100\" placeholder=\"text\" name=\"qtext\" id=\"qtext" + i + "\" cols=\"40\" rows=\"5\" style=\"padding:12px 30px; min-height:15vh; min-width:18.5vw; max-width:18.5vw\"></textarea></div><div class=\"wrap-input100 validate-input\"><input class=\"input100\" style=\"padding-left:30px; border-radius:20px;\" type=\"number\" id=\"variantsCount" + i + "\" name=\"questionCount\" placeholder=\"Variants count\"><span class=\"focus-input100\"></span></div><div class=\"container-login100-form-btn\"><button onclick=\"add_variants(" + i + ")\" class=\"login100-form-btn\" style=\"border-radius:20px; width:15vw;\">Add variants</button></div><div id=\"variant" + i + "\"></div>";
+			}
+			form_elem.innerHTML += "<div class=\"container-login100-form-btn\"><button type=\"submit\" onclick=\"register()\" class=\"login100-form-btn\" style=\"border-radius:20px;\">Ready</button></div>";
+		}
+
+		function add_variants(number) {
+			var variants_count = document.getElementById("variantsCount" + number).value;
+			var form_elem = document.getElementById("variant" + number);
+			for (let i = 1; i <= variants_count; i++) {
+				form_elem.innerHTML += "<div style=\"padding-top: 5vh;\">Variant " + i + "<div class=\"wrap-input100 validate-input\"><div class=\"wrap-input100 validate-input\"><input class=\"input100\" style=\"padding-left:30px; border-radius:20px;\" type=\"text\" name=\"text\" id=\"vtext" + i + "\" placeholder=\"Text\"><span class=\"focus-input100\"></span></div><label>Is correct&nbsp;&nbsp;&nbsp;</label><input type=\"checkbox\" id=\"vcheck" + i + "\"><div class=\"wrap-input100 validate-input\"><input class=\"input100\" style=\"padding-left:30px; border-radius:20px;\" type=\"number\" name=\"correct_reward\" id=\"correct_reward" + i + "\" placeholder=\"Correct reward\"><span class=\"focus-input100\"></span></div><div class=\"wrap-input100 validate-input\"><input class=\"input100\" style=\"padding-left:30px; border-radius:20px;\" type=\"number\" name=\"incorrect_fee\" id=\"incorrect_fee" + i + "\" placeholder=\"Incorrect fee\"><span class=\"focus-input100\"></span></div></div></div>";
+			}
+		}
+	</script>
+</body>
+</html>

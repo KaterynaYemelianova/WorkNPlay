@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Present Registration</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="../css/vue.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/main_page.css">
+</head>
+<body>
+	
+	<nav id="header" class="menu one">
+		<custom-header></custom-header>
+	</nav>
+	
+	<div class="comp_reg">
+		<div class="wrap-login100 reg_form">
+
+			<form id="present_registration_form" class="login100-form validate-form reg_form_form">
+				<span class="login100-form-title">
+					Present Registration
+				</span>
+
+				<div class="wrap-input100 validate-input">
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="text" name="name" placeholder="Name">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input">
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="number" name="points_cost" placeholder="Points Cost">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input">
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="text" name="image_url" placeholder="Image URL">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="container-login100-form-btn">
+					<button type="submit" class="login100-form-btn" style="border-radius:20px;">
+						Create a present
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	<script src="../js/libs/jquery.js"></script>
+	<script src="../js/libs/vue.js"></script>
+	<script src="../js/vue_filters.js"></script>
+	<script src="../js/libs/sha256.js"></script>
+	<script src="../js/cookie.js"></script>
+	<script src="../js/localize.js"></script>
+	<script src="../js/session.js"></script>
+	<script src="../js/role.js"></script>
+	<script src="../js/header.js"></script>
+	<script src="../js/present_registration.js"></script>
+	
+	<script src="../js/main.js">
+	
+		$(".five li ul").hide();
+		$(".five li:has('.submenu')").hover(
+		function(){
+			$(".five li ul").stop().fadeToggle(300);}
+		);
+	
+	</script>
+
+</body>
+</html>

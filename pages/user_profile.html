@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>User's Profile</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="../css/vue.css">
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="../css/main_page.css">
+</head>
+<body>
+	
+	<nav id="header" class="menu one">
+		<custom-header></custom-header>
+	</nav>
+	
+	<div id="user-info" class="comp_reg room_reg">
+		<div class="wrap-login100 reg_form">
+
+			<form id="user_profile_form" class="login100-form validate-form reg_form_form">
+				<span class="login100-form-title">
+					{{ 'user_profile' | localize }}
+				</span>
+
+				<div class="wrap-input100 validate-input">
+					<label>{{ 'login' | localize }}</label>
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="text" name="login" placeholder="Login" v-bind:value="user.login" readonly>
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input">
+					<label>{{ 'first_name' | localize }}</label>
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="text" name="first_name" placeholder="First name" v-bind:value="user.first_name">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input">
+					<label>{{ 'last_name' | localize }}</label>
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="text" name="last_name" placeholder="Last name" v-bind:value="user.last_name">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input">
+					<label>{{ 'email' | localize }}</label>
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="email" name="email" placeholder="Email" v-bind:value="user.email">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input">
+					<label>{{ 'points' | localize }}</label>
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="number" name="points" placeholder="Points" v-bind:value="user.points" readonly>
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input">
+					<label>{{ 'trello_username' | localize }}</label>
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="text" name="trello_username" placeholder="Trello username" v-bind:value="user.trello_username">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="wrap-input100 validate-input">
+					<label>{{ 'trello_api_key' | localize }}</label>
+					<input class="input100" style="padding-left:30px; border-radius:20px;" type="text" name="trello_api_key" placeholder="Trello API-key" v-bind:value="user.trello_api_key">
+					<span class="focus-input100"></span>
+				</div>
+				
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn" style="border-radius:20px;">
+						{{ 'save' | localize }}
+					</button>
+				</div>
+			</form>
+			<div v-if="user.presents">
+				<br/>
+				<br/>
+				{{ 'presents' | localize }}
+				<present v-for="pres of user.presents" v-bind:pres="pres"></present>
+			</div>
+			
+			<div v-if="events">
+				<br/>
+				<br/>
+				{{ 'events' | localize }}
+				<enter_leave_event v-for="e of events" v-bind:event_model="e"></enter_leave_event>
+			</div>
+		</div>
+	</div>
+	
+	<script src="../js/libs/jquery.js"></script>
+	<script src="../js/libs/vue.js"></script>
+	<script src="../js/vue_filters.js"></script>
+	<script src="../js/libs/sha256.js"></script>
+	<script src="../js/cookie.js"></script>
+	<script src="../js/localize.js"></script>
+	<script src="../js/session.js"></script>
+	<script src="../js/role.js"></script>
+	<script src="../js/header.js"></script>
+	<script src="../js/user_profile.js"></script>
+
+</body>
+</html>
